@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Hello {
     @GetMapping("/")
     public String Greet() {
-        return "Hello world";
+        return "Hello world, from spring boot";
     }
     
 }
