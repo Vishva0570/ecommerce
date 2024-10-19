@@ -2,6 +2,7 @@ package com.example.e_commerce.Service;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,9 @@ public class ProductService {
 
     }
 
-    public ResponseEntity<Product> getProduct(int id) {
-      return null;
+    public ResponseEntity<Product> getProduct(int Id) {
+        Product product = products.stream().filter(p-> p.getProductId()== Id).findFirst().orElse(new Product(0,"No Item",0));
+      return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
   
